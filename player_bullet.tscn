@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://7423mdjeocxe"]
+
+[ext_resource type="Script" path="res://player_bullet.gd" id="1_moe63"]
+[ext_resource type="Texture2D" uid="uid://bul6j3tpaxamy" path="res://shot.png" id="2_7p53q"]
+
+[node name="PlayerBullet" type="Node2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+script = ExtResource("1_moe63")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7p53q")
