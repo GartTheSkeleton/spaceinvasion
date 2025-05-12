@@ -10,4 +10,4 @@ func _process(delta: float) -> void:
 	if global_position.y < 0:
 		queue_free()
 	
-	global_position.y -
+	global_position.y -= 12
