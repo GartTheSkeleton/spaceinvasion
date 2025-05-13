@@ -7,7 +7,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if global_position.y < 0:
-		queue_free()
+	global_position.y -= 12 #move up
 	
-	global_position.y -= 12
+	if global_position.y < 0: #clear when off screen
+		queue_free()
+		
+	if $Area2D.has_overlapping_areas():
+		for i in $Area2D.get_overlapping_areas():
+			if i.get_parent().is_in_group("Enemy"):
+				i.get_parent().die()
+				queue_free()
